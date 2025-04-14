@@ -200,10 +200,12 @@
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 0;  /* Remove default gap */
+            row-gap: 2px;     /* Very small gap between rows */
+            column-gap: 30px;  /* Keep original gap between columns */
             margin-bottom: 80px;
         }
-        
+
         .product-card {
             position: relative;
             aspect-ratio: auto;
@@ -818,6 +820,8 @@
         .find-tiktok {
             transform: scale(0.9);
         }
+
+
 
         /* MOBILE RULES */
         @media screen and (max-width: 768px) {
