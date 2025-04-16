@@ -24,6 +24,12 @@
             font-family: Inter, sans-serif;
             font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
         }
+
+        /* Prevent horizontal scrolling on mobile */
+        body, html {
+            overflow-x: hidden; /* Disable horizontal scrolling */
+        }
+
         html {
             scroll-behavior: auto;
         }
@@ -46,7 +52,7 @@
         }
         
         .container {
-            max-width: 1200px;
+            max-width: 100%;
             margin: 0 auto;
             padding: 0 20px;
         }
