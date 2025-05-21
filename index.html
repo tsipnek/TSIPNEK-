@@ -19,12 +19,6 @@
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
-    <link rel="preconnect" href="https://rsms.me/">
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
     <style>
         /* Base styles */
         * {
@@ -33,6 +27,22 @@
             box-sizing: border-box;
             font-family: Inter, sans-serif;
             font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+        }
+
+        @font-face {
+        font-family: 'Inter';
+        src: url('/fonts/InterDisplay-SemiBold.woff2') format('woff2');
+        font-weight: 100 900;
+        font-style: normal;
+        font-display: swap;
+        }
+
+        @font-face {
+        font-family: 'Inter';
+        src: url('/fonts/InterDisplay-SemiBoldItalic.woff2') format('woff2');
+        font-weight: 100 900; 
+        font-style: italic;
+        font-display: swap;
         }
 
         /* Prevent horizontal scrolling on mobile */
@@ -160,7 +170,7 @@
             margin-bottom: 10px;
             line-height: 1.2;
             opacity: 0;
-            transform: translateY(20px);
+            overflow: visible;
         }
         
         .hero h2 {
@@ -170,11 +180,14 @@
             opacity: 0;
             transform: translateY(20px);
         }
-
-        .hero .highlight {
-            font-family:sf
-            font-size: inherit; /* Keep the same size as the surrounding text */
-        }
+        
+        /*.hero .highlight {
+            font-style: italic;
+            font-size: inherit;
+            display: inline-block;
+            padding-right: 0.1em;
+            transform: translateZ(0);
+        }*/
         
         .btn {
             padding: 12px 28px;
@@ -229,8 +242,18 @@
             row-gap: 2px;     /* Very small gap between rows */
             column-gap: 30px;  /* Keep original gap between columns */
             margin-bottom: 80px;
+            justify-content: center;
         }
 
+        .products-grid img {
+            display: block;
+            margin: 0 auto;
+        } 
+        
+        .product img {
+            display: block;
+            margin: 0 auto;
+        }
         .product-card {
             position: relative;
             aspect-ratio: auto;
@@ -247,101 +270,15 @@
         
         .product-image {
             height: auto;
-            width: 100%;
+            width: auto;
+            display: auto;
+            margin: 0 auto;
+            max-width: 100%;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             object-fit: contain;
             transition: .5s ease,
-        }
-
-      
-
-        .product-card img[src="product31.webp"] {
-            width: 70%;  /* Make the image 50% of its container width */
-            height: auto;  /* Maintain aspect ratio */
-            margin: 0 auto;  /* Center the image horizontally */
-            display: block;  /* Ensure margin auto works */
-        }
-
-        .product-card img[src="product27.webp"] {
-            width: 90%;  /* Make the image 50% of its container width */
-            height: auto;  /* Maintain aspect ratio */
-            margin: 0 auto;  /* Center the image horizontally */
-            display: block;  /* Ensure margin auto works */
-        }
-
-        .product-card img[src="product1.webp"] {
-            width: 80%;  /* Make the image 50% of its container width */
-            height: auto;  /* Maintain aspect ratio */
-            margin: 0 auto;  /* Center the image horizontally */
-            display: block;  /* Ensure margin auto works */
-            transform: translateY(35px);
-        }
-
-        .product-card img[src="product8hover.png"] {
-            height: auto;
-            margin: 0 auto;
-            display: block;
-            object-fit: contain;
-            transform: translatey(-15%);
-        }
-
-        .product-card img[src="product19hover.png"] {
-            width: 110%;  /* Make the hover image 60% of container width */
-            height: auto;  /* Maintain aspect ratio */
-            margin: 0 auto;  /* Center horizontally */
-            display: block;  /* Ensure margin auto works */
-            object-fit: contain;  /* Preserve aspect ratio */
-            transform: translateY(-90px);
-        }
-
-        .product-card img[src="product34.png"] {
-            width: 90%;  /* Make the image 50% of its container width */
-            height: auto;  /* Maintain aspect ratio */
-            margin: 0 auto;  /* Center the image horizontally */
-            display: block;  /* Ensure margin auto works */
-        }
-
-        .product-card img[src="product35.png"] {
-            width: 50%;  /* Make the image 50% of its container width */
-            height: auto;  /* Maintain aspect ratio */
-            margin: 0 auto;  /* Center the image horizontally */
-            display: block;  /* Ensure margin auto works */
-            border: 5px solid #3d3d3d;
-        }
-
-        .product-card img[src="product11.webp"],
-        .product-card img[src="product11hover.png"] {
-            width: 90%; /* Adjust this value as needed */
-            height: auto;
-            margin: 0 auto;
-            display: block;
-            object-fit: contain;
-        }
-
-        .product-card img[src="product15.webp"]{
-            margin-top: 90px;
-        }
-
-        .product-card img[src="product11hover.png"] {
-            transform: translate(-50%, -50%);
-            top: 50%;
-            left: 50%;
-            position: absolute;
-        }
-
-        .product-card img[src="product10.webp"] {
-            height: auto;
-            margin: 0 auto;
-            display: block;
-            object-fit: contain;
-            transform: translateY(20px); /* Added transform to move image down */
-            position: relative;
-        }
-
-        .product-card img[src="product36.png"] {
-            transform: translatey(-30px);
         }
 
         /* New styles for hover effect */
@@ -375,6 +312,11 @@
         .no-hover:hover .product-hover-image {
             opacity: 0; /* Hide hover image */
         }
+
+       /* .product-card:hover img[src*="product11hover"] {
+            position: absolute;
+            transform: translateY(-20px);
+        }*/
 
         /* About section */
         #about {
@@ -778,6 +720,8 @@
         .app-form-button:hover {
         color: #888;
         }
+
+
         /* Footer button */
         .floating-button {
             position: fixed;
@@ -936,7 +880,7 @@
                 transition: opacity 0.3s ease;
             }
 
-            .product-card img[src="product10.webp"] {
+            .product-card img[src*="product10"] {
                 width: 140%;
                 height: auto;
                 margin: 0 auto;
@@ -948,7 +892,7 @@
                 transform: translate(-50%, -47%);
             }
 
-            .product-card img[src="product8.webp"] {
+            .product-card img[src*="product8"] {
                 width: 130%;
                 height: auto;
                 margin: 0 auto;
@@ -960,7 +904,7 @@
                 transform: translate(-50%, -50%);
             }
 
-            .product-card img[src="product19b.webp"] {
+            .product-card img[src*="product19b"] {
                 width: 130%;
                 height: auto;
                 margin: 0 auto;
@@ -972,7 +916,7 @@
                 transform: translate(-50%, -50%);
             }
 
-            .product-card img[src="product36.png"] {
+            .product-card img[src*="product36"] {
                 width: 130%;
                 height: auto;
                 margin: 0 auto;
@@ -984,7 +928,7 @@
                 transform: translate(-50%, -60%);
             }
 
-            .product-card img[src="product27.webp"] {
+            .product-card img[src*="product27"] {
                 width: 100%;
                 height: auto;
                 margin: 0 auto;
@@ -996,7 +940,7 @@
                 transform: translate(-50%, -50%);
             }
 
-            .product-card img[src="product1.webp"] {
+            .product-card img[src*="product1"] {
                 width: 90%;
                 height: auto;
                 margin: 0 auto;
@@ -1008,7 +952,7 @@
                 transform: translate(-50%, -45%); /* Changed from translateY(35px) to center the image */
             }
 
-            .product-card img[src="product15.webp"] {
+            .product-card img[src*="product15"] {
                 width: 130%;
                 height: auto;
                 margin: 0;
@@ -1020,7 +964,7 @@
                 transform: translate(-50%, -45%); /* Center vertically and horizontally */
             }
 
-            .product-card img[src="product23b.webp"] {
+            .product-card img[src*="product23b"] {
                 width: 100%;
                 height: auto;
                 margin: 0;
@@ -1032,7 +976,7 @@
                 transform: translate(-50%, -40%); /* Center vertically and horizontally */
             }
 
-            .product-card img[src="product28b.webp"] {
+            .product-card img[src*="product28b"] {
                 width: 140%;
                 height: auto;
                 margin: 0 auto;
@@ -1044,7 +988,7 @@
                 transform: translate(-50%, -50%); /* Changed from translateY(35px) to center the image */
             }
 
-            .product-card img[src="product26.webp"] {
+            .product-card img[src*="product26"] {
                 width: 140%;
                 height: auto;
                 margin: 0 auto;
@@ -1056,7 +1000,7 @@
                 transform: translate(-50%, -45%);
             }
 
-            .product-card img[src="product30.webp"] {
+            .product-card img[src*="product30"] {
                 width: 140%;
                 height: auto;
                 margin: 0 auto;
@@ -1068,7 +1012,7 @@
                 transform: translate(-50%, -45%);
             }
 
-            .product-card img[src="product31.webp"] {
+            .product-card img[src*="product31"] {
                 width: 110%;
                 height: auto;
                 margin: 0 auto;
@@ -1080,9 +1024,9 @@
                 transform: translate(-50%, -45%);
             }
 
-            .product-card img[src="product11.webp"],
-            .product-card img[src="product12.webp"],
-            .product-card img[src="product13b.webp"] {
+            .product-card img[src*="product11"],
+            .product-card img[src*="product12"],
+            .product-card img[src*="product13b"] {
                 width: 140%;
                 height: auto;
                 margin: 0;
@@ -1095,7 +1039,7 @@
             }
 
 
-            .product-card img[src="product35.png"] {
+            .product-card img[src*="product35"] {
                 width: 70%;
                 height: auto;
                 margin: 0 auto;
@@ -1135,7 +1079,7 @@
 
             /* Preserve specific image customizations */
 
-            .product-card img[src="product19hover.png"] {
+            .product-card img[src*="product19hover"] {
                 width: 130% !important;
                 transform: translate(-50%, -70%);
                 top: 100%; /* Adjust the starting position */
@@ -1378,13 +1322,13 @@
     <div class="nav-container">
         <div class="nav">
             <div class="nav-item active">
-                <img src="work.svg" alt="work">
+                <img src="images/work.svg" alt="work">
             </div>
             <div class="nav-item logo">
-                <img class="logo" src="logo.webp" alt="logo">
+                <img class="logo" src="images/logo.webp" alt="logo">
             </div>
             <div class="nav-item">
-                <img src="letter.svg" alt="letter">
+                <img src="images/letter.svg" alt="letter">
             </div>
         </div>
     </div>
@@ -1392,7 +1336,7 @@
     <!-- Hero Section -->
     <div class="container">
         <div class="hero">
-            <h1>I'm <span class="highlight">tsipnek</span></h1>
+            <h1>I'm  <span class="highlight">tsipnek</span></h1>
             <h2>Designer and Creator</h2>
         </div>
     </div>
@@ -1405,163 +1349,326 @@
 
         <div class="products-grid">
             <div class="product-card">
-                <img src="product29.webp" alt="product29" class="product-image" loading="lazy"> 
-                <img src="product29hover.png" alt="product29hover" class="product-hover-image" loading="lazy">
+                <img src="images/products/product29-1800w.webp" 
+                srcset="images/products/product29-600w.webp 600w, images/products/product29-1200w.webp 1200w, images/products/product29-1800w.webp 1800w" 
+                sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" 
+                alt="product29" class="product-image" loading="lazy">
+                <img src="images/products/product29hover-1800w.webp" 
+                srcset="images/products/product29hover-600w.webp 600w, images/products/product29hover-1200w.webp 1200w, images/products/product29hover-1800w.webp 1800w" 
+                sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" 
+                alt="product29 hover" class="product-hover-image" loading="lazy">
             </div>
             <div class="product-card">
-                <img src="product32.png" alt="product32" class="product-image" loading="lazy"> 
-                <img src="product32hover.png" alt="product32hover" class="product-hover-image" loading="lazy">
+                <img src="images/products/product32-1800w.webp" 
+                    srcset="images/products/product32-600w.webp 600w, images/products/product32-1200w.webp 1200w, images/products/product32-1800w.webp 1800w" 
+                    sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" 
+                    alt="product32" class="product-image" loading="lazy">
+                <img src="images/products/product32hover-1800w.webp" 
+                    srcset="images/products/product32hover-600w.webp 600w, images/products/product32hover-1200w.webp 1200w, images/products/product32hover-1800w.webp 1800w" 
+                    sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" 
+                    alt="product32hover" class="product-hover-image" loading="lazy">
             </div>
             <div class="product-card">
-                <img src="product18.webp" alt="product18" class="product-image" loading="lazy"> 
-                <img src="product18hover.png" alt="product18hover" class="product-hover-image" loading="lazy">
+                <img src="images/products/product18-1800w.webp" 
+                    srcset="images/products/product18-600w.webp 600w, images/products/product18-1200w.webp 1200w, images/products/product18-1800w.webp 1800w" 
+                    sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" 
+                    alt="product18" class="product-image" loading="lazy">
+                <img src="images/products/product18hover-1800w.webp" 
+                    srcset="images/products/product18hover-600w.webp 600w, images/products/product18hover-1200w.webp 1200w, images/products/product18hover-1800w.webp 1800w" 
+                    sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" 
+                    alt="product18hover" class="product-hover-image" loading="lazy">
             </div>
             <div class="product-card no-hover">
-                <img src="product4b.webp" alt="product4" class="product-image" loading="lazy">
+                <img src="images/products/product4b-1800w.webp" 
+                srcset="images/products/product4b-600w.webp 600w, images/products/product4b-1200w.webp 1200w, images/products/product4b-1800w.webp 1800w" 
+                sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" 
+                alt="product4" class="product-image" loading="lazy">
             </div>
             <div class="product-card">
-                <img src="product19b.webp" alt="product19" class="product-image" loading="lazy"> 
-                <img src="product19hover.png" alt="product19hover" class="product-hover-image" loading="lazy">
+                <img src="images/products/product19b-1800w.webp" 
+                    srcset="images/products/product19b-600w.webp 600w, images/products/product19b-1200w.webp 1200w, images/products/product19b-1800w.webp 1800w" 
+                    sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" 
+                    alt="product19" class="product-image" loading="lazy">
+                <img src="images/products/product19hover-1800w.webp" 
+                    srcset="images/products/product19hover-600w.webp 600w, images/products/product19hover-1200w.webp 1200w, images/products/product19hover-1800w.webp 1800w" 
+                    sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" 
+                    alt="product19hover" class="product-hover-image" loading="lazy">
             </div>
             <div class="product-card no-hover">
-                <img src="product7.webp" alt="product7" class="product-image" loading="lazy">
+                <img src="images/products/product7-1800w.webp" 
+                srcset="images/products/product7-600w.webp 600w, images/products/product7-1200w.webp 1200w, images/products/product7-1800w.webp 1800w" 
+                sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" 
+                alt="product7" class="product-image" loading="lazy">
             </div>
             <div class="product-card">
-                <img src="product8.webp" alt="product8" class="product-image" loading="lazy"> 
-                <img src="product8hover.png" alt="product8hover" class="product-hover-image" loading="lazy">
+                <img src="images/products/product8-1800w.webp" 
+                    srcset="images/products/product8-600w.webp 600w, images/products/product8-1200w.webp 1200w, images/products/product8-1800w.webp 1800w" 
+                    sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" 
+                    alt="product8" class="product-image" loading="lazy">
+                <img src="images/products/product8hover-1800w.webp" 
+                    srcset="images/products/product8hover-600w.webp 600w, images/products/product8hover-1200w.webp 1200w, images/products/product8hover-1800w.webp 1800w" 
+                    sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" 
+                    alt="product8hover" class="product-hover-image" loading="lazy">
             </div>
             <div class="product-card no-hover">
-                <img src="product36.png" alt="product36" class="product-image" loading="lazy">
+                 <img src="images/products/product36-1800w.webp" 
+                    srcset="images/products/product36-600w.webp 600w, images/products/product36-1200w.webp 1200w, images/products/product36-1800w.webp 1800w" 
+                    sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" 
+                    alt="product36" class="product-image" loading="lazy">
             </div>
             <div class="product-card no-hover">
-                <img src="product10.webp" alt="product10" class="product-image" loading="lazy">
+                <img src="images/products/product10-1800w.webp" 
+                srcset="images/products/product10-600w.webp 600w, images/products/product10-1200w.webp 1200w, images/products/product10-1800w.webp 1800w" 
+                sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" 
+                alt="product10" class="product-image" loading="lazy">      
             </div>
             <div class="product-card">
-                <img src="product11.webp" alt="product11" class="product-image" loading="lazy"> 
-                <img src="product11hover.png" alt="product11hover" class="product-hover-image" loading="lazy">
+                <img src="images/products/product11-1800w.webp" 
+                    srcset="images/products/product11-600w.webp 600w, images/products/product11-1200w.webp 1200w, images/products/product11-1800w.webp 1800w" 
+                    sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" 
+                    alt="product11" class="product-image" loading="lazy">
+                <img src="images/products/product11hover-1800w.webp" 
+                    srcset="images/products/product11hover-600w.webp 600w, images/products/product11hover-1200w.webp 1200w, images/products/product11hover-1800w.webp 1800w" 
+                    sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" 
+                    alt="product11hover" class="product-hover-image" loading="lazy">
             </div>
             <div class="product-card">
-                <img src="product12.webp" alt="product12" class="product-image" loading="lazy"> 
-                <img src="product12hover.png" alt="product12hover" class="product-hover-image" loading="lazy">
+                <img src="images/products/product12-1800w.webp" 
+                    srcset="images/products/product12-600w.webp 600w, images/products/product12-1200w.webp 1200w, images/products/product12-1800w.webp 1800w" 
+                    sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" 
+                    alt="product12" class="product-image" loading="lazy">
+                <img src="images/products/product12hover-1800w.webp" 
+                    srcset="images/products/product12hover-600w.webp 600w, images/products/product12hover-1200w.webp 1200w, images/products/product12hover-1800w.webp 1800w" 
+                    sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" 
+                    alt="product12hover" class="product-hover-image" loading="lazy">
             </div>
             <div class="product-card no-hover">
-                <img src="product13b.webp" alt="product13" class="product-image" loading="lazy">
+                <img src="images/products/product13b-1800w.webp" 
+                srcset="images/products/product13b-600w.webp 600w, images/products/product13b-1200w.webp 1200w, images/products/product13b-1800w.webp 1800w" 
+                sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" 
+                alt="product13" class="product-image" loading="lazy">
             </div>
             <div class="product-card">
-                <img src="product14.webp" alt="product14" class="product-image" loading="lazy"> 
-                <img src="product14hover.png" alt="product14hover" class="product-hover-image" loading="lazy">
+                <img src="images/products/product14-1800w.webp" 
+                    srcset="images/products/product14-600w.webp 600w, images/products/product14-1200w.webp 1200w, images/products/product14-1800w.webp 1800w" 
+                    sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" 
+                    alt="product14" class="product-image" loading="lazy">
+                <img src="images/products/product14hover-1800w.webp" 
+                    srcset="images/products/product14hover-600w.webp 600w, images/products/product14hover-1200w.webp 1200w, images/products/product14hover-1800w.webp 1800w" 
+                    sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" 
+                    alt="product14hover" class="product-hover-image" loading="lazy">
             </div>
             <div class="product-card">
-                <img src="product15.webp" alt="product15" class="product-image" loading="lazy"> 
-                <img src="product15hover.png" alt="product15hover" class="product-hover-image" loading="lazy">
+                <img src="images/products/product15-1800w.webp" 
+                    srcset="images/products/product15-600w.webp 600w, images/products/product15-1200w.webp 1200w, images/products/product15-1800w.webp 1800w" 
+                    sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" 
+                    alt="product15" class="product-image" loading="lazy">
+                <img src="images/products/product15hover-1800w.webp" 
+                    srcset="images/products/product15hover-600w.webp 600w, images/products/product15hover-1200w.webp 1200w, images/products/product15hover-1800w.webp 1800w" 
+                    sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" 
+                    alt="product15hover" class="product-hover-image" loading="lazy">
             </div>
             <div class="product-card">
-                <img src="product33.png" alt="product33" class="product-image" loading="lazy">
-                <img src="product33hover.png" alt="product33hover" class="product-hover-image" loading="lazy">
+                <img src="images/products/product33-1800w.webp" 
+                    srcset="images/products/product33-600w.webp 600w, images/products/product33-1200w.webp 1200w, images/products/product33-1800w.webp 1800w" 
+                    sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" 
+                    alt="product33" class="product-image" loading="lazy">
+                <img src="images/products/product33hover-1800w.webp" 
+                    srcset="images/products/product33hover-600w.webp 600w, images/products/product33hover-1200w.webp 1200w, images/products/product33hover-1800w.webp 1800w" 
+                    sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" 
+                    alt="product33hover" class="product-hover-image" loading="lazy">
             </div>
             <div class="product-card">
-                <img src="product34.png" alt="product34" class="product-image" loading="lazy">
-                <img src="product34hover.png" alt="product34hover" class="product-hover-image" loading="lazy">
+                <img src="images/products/product34-1800w.webp" 
+                    srcset="images/products/product34-600w.webp 600w, images/products/product34-1200w.webp 1200w, images/products/product34-1800w.webp 1800w" 
+                    sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" 
+                    alt="product34" class="product-image" loading="lazy">
+                <img src="images/products/product34hover-1800w.webp" 
+                    srcset="images/products/product34hover-600w.webp 600w, images/products/product34hover-1200w.webp 1200w, images/products/product34hover-1800w.webp 1800w" 
+                    sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" 
+                    alt="product34hover" class="product-hover-image" loading="lazy">
             </div>
             <div class="product-card">
-                <img src="product9.webp" alt="product9" class="product-image" loading="lazy"> 
-                <img src="product9hover.png" alt="product9hover" class="product-hover-image" loading="lazy">
+                <img src="images/products/product9-1800w.webp" 
+                    srcset="images/products/product9-600w.webp 600w, images/products/product9-1200w.webp 1200w, images/products/product9-1800w.webp 1800w" 
+                    sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" 
+                    alt="product9" class="product-image" loading="lazy">
+                <img src="images/products/product9hover-1800w.webp" 
+                    srcset="images/products/product9hover-600w.webp 600w, images/products/product9hover-1200w.webp 1200w, images/products/product9hover-1800w.webp 1800w" 
+                    sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" 
+                    alt="product9hover" class="product-hover-image" loading="lazy">
             </div>
             <div class="product-card">
-                <img src="product5.webp" alt="product5" class="product-image" loading="lazy"> 
-                <img src="product5hover.png" alt="product5hover" class="product-hover-image" loading="lazy">
+                <img src="images/products/product5-1800w.webp" 
+                    srcset="images/products/product5-600w.webp 600w, images/products/product5-1200w.webp 1200w, images/products/product5-1800w.webp 1800w" 
+                    sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" 
+                    alt="product5" class="product-image" loading="lazy">
+                <img src="images/products/product5hover-1800w.webp" 
+                    srcset="images/products/product5hover-600w.webp 600w, images/products/product5hover-1200w.webp 1200w, images/products/product5hover-1800w.webp 1800w" 
+                    sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" 
+                    alt="product5hover" class="product-hover-image" loading="lazy">
             </div>
             <div class="product-card">
-                <img src="product20.webp" alt="product20" class="product-image" loading="lazy"> 
-                <img src="product20hover.png" alt="product20hover" class="product-hover-image" loading="lazy">
+                <img src="images/products/product20-1800w.webp" 
+                    srcset="images/products/product20-600w.webp 600w, images/products/product20-1200w.webp 1200w, images/products/product20-1800w.webp 1800w" 
+                    sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" 
+                    alt="product20" class="product-image" loading="lazy">
+                <img src="images/products/product20hover-1800w.webp" 
+                    srcset="images/products/product20hover-600w.webp 600w, images/products/product20hover-1200w.webp 1200w, images/products/product20hover-1800w.webp 1800w" 
+                    sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" 
+                    alt="product20hover" class="product-hover-image" loading="lazy">
             </div>
             <div class="product-card no-hover">
-                <img src="product21.webp" alt="product21" class="product-image" loading="lazy">
+                <img src="images/products/product21-1800w.webp" 
+                srcset="images/products/product21-600w.webp 600w, images/products/product21-1200w.webp 1200w, images/products/product21-1800w.webp 1800w" 
+                sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" 
+                alt="product21" class="product-image" loading="lazy">
             </div>
             <div class="product-card">
-                <img src="product23b.webp" alt="product23" class="product-image" loading="lazy"> 
-                <img src="product23hover.png" alt="product23hover" class="product-hover-image" loading="lazy">
+                <img src="images/products/product23b-1800w.webp" 
+                    srcset="images/products/product23b-600w.webp 600w, images/products/product23b-1200w.webp 1200w, images/products/product23b-1800w.webp 1800w" 
+                    sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" 
+                    alt="product23" class="product-image" loading="lazy">
+                <img src="images/products/product23hover-1800w.webp" 
+                    srcset="images/products/product23hover-600w.webp 600w, images/products/product23hover-1200w.webp 1200w, images/products/product23hover-1800w.webp 1800w" 
+                    sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" 
+                    alt="product23hover" class="product-hover-image" loading="lazy">
             </div>
             <div class="product-card">
-                <img src="product24.webp" alt="product24" class="product-image" loading="lazy"> 
-                <img src="product24hover.png" alt="product24hover" class="product-hover-image" loading="lazy">
+                <img src="images/products/product24-1800w.webp" 
+                    srcset="images/products/product24-600w.webp 600w, images/products/product24-1200w.webp 1200w, images/products/product24-1800w.webp 1800w" 
+                    sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" 
+                    alt="product24" class="product-image" loading="lazy">
+                <img src="images/products/product24hover-1800w.webp" 
+                    srcset="images/products/product24hover-600w.webp 600w, images/products/product24hover-1200w.webp 1200w, images/products/product24hover-1800w.webp 1800w" 
+                    sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" 
+                    alt="product24hover" class="product-hover-image" loading="lazy">
             </div>
             <div class="product-card no-hover">
-                <img src="product25b.webp" alt="product25" class="product-image" loading="lazy">
+                <img src="images/products/product25b-1800w.webp" 
+                srcset="images/products/product25b-600w.webp 600w, images/products/product25b-1200w.webp 1200w, images/products/product25b-1800w.webp 1800w" 
+                sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" 
+                alt="product25b" class="product-image" loading="lazy">
             </div>
             <div class="product-card">
-                <img src="product26.webp" alt="product26" class="product-image" loading="lazy"> 
-                <img src="product26hover.png" alt="product26hover" class="product-hover-image" loading="lazy">
+                <img src="images/products/product26-1800w.webp" 
+                    srcset="images/products/product26-600w.webp 600w, images/products/product26-1200w.webp 1200w, images/products/product26-1800w.webp 1800w" 
+                    sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" 
+                    alt="product26" class="product-image" loading="lazy">
+                <img src="images/products/product26hover-1800w.webp" 
+                    srcset="images/products/product26hover-600w.webp 600w, images/products/product26hover-1200w.webp 1200w, images/products/product26hover-1800w.webp 1800w" 
+                    sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" 
+                    alt="product26hover" class="product-hover-image" loading="lazy">
             </div>
             <div class="product-card">
-                <img src="product27.webp" alt="product27" class="product-image" loading="lazy"> 
-                <img src="product27hover.png" alt="product27hover" class="product-hover-image" loading="lazy">
+                <img src="images/products/product27-1800w.webp" 
+                    srcset="images/products/product27-600w.webp 600w, images/products/product27-1200w.webp 1200w, images/products/product27-1800w.webp 1800w" 
+                    sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" 
+                    alt="product27" class="product-image" loading="lazy">
+                <img src="images/products/product27hover-1800w.webp" 
+                    srcset="images/products/product27hover-600w.webp 600w, images/products/product27hover-1200w.webp 1200w, images/products/product27hover-1800w.webp 1800w" 
+                    sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" 
+                    alt="product27hover" class="product-hover-image" loading="lazy">
             </div>
             <div class="product-card">
-                <img src="product28b.webp" alt="product28" class="product-image" loading="lazy"> 
-                <img src="product28hover.png" alt="product28hover" class="product-hover-image" loading="lazy">
+                <img src="images/products/product28b-1800w.webp" 
+                    srcset="images/products/product28b-600w.webp 600w, images/products/product28b-1200w.webp 1200w, images/products/product28b-1800w.webp 1800w" 
+                    sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" 
+                    alt="product28" class="product-image" loading="lazy">
+                <img src="images/products/product28hover-1800w.webp" 
+                    srcset="images/products/product28hover-600w.webp 600w, images/products/product28hover-1200w.webp 1200w, images/products/product28hover-1800w.webp 1800w" 
+                    sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" 
+                    alt="product28hover" class="product-hover-image" loading="lazy">
             </div>
             <div class="product-card">
-                <img src="product1.webp" alt="product1" class="product-image" loading="lazy">
-                <img src="product1hover.png" alt="product1hover" class="product-hover-image" loading="lazy">
+                <img src="images/products/product1-1800w.webp" 
+                    srcset="images/products/product1-600w.webp 600w, images/products/product1-1200w.webp 1200w, images/products/product1-1800w.webp 1800w" 
+                    sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" 
+                    alt="product1" class="product-image" loading="lazy">
+                <img src="images/products/product1hover-1800w.webp" 
+                    srcset="images/products/product1hover-600w.webp 600w, images/products/product1hover-1200w.webp 1200w, images/products/product1hover-1800w.webp 1800w" 
+                    sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" 
+                    alt="product1hover" class="product-hover-image" loading="lazy">
             </div>
             <div class="product-card no-hover">
-                <img src="product30.webp" alt="product30" class="product-image" loading="lazy">
+                <img src="images/products/product30-1800w.webp" 
+                srcset="images/products/product30-600w.webp 600w, images/products/product30-1200w.webp 1200w, images/products/product30-1800w.webp 1800w" 
+                sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" 
+                alt="product30" class="product-image" loading="lazy">
             </div>
             <div class="product-card no-hover">
-                <img src="product31.webp" alt="product31" class="product-image" loading="lazy">
+                <img src="images/products/product31-1800w.webp" 
+                srcset="images/products/product31-600w.webp 600w, images/products/product31-1200w.webp 1200w, images/products/product31-1800w.webp 1800w" 
+                sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" 
+                alt="product31" class="product-image" loading="lazy">
             </div>
             <div class="product-card no-hover">
-                <img src="product16.webp" alt="product16" class="product-image" loading="lazy">
+                <img src="images/products/product16-1800w.webp" 
+                srcset="images/products/product16-600w.webp 600w, images/products/product16-1200w.webp 1200w, images/products/product16-1800w.webp 1800w" 
+                sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" 
+                alt="product16" class="product-image" loading="lazy">
             </div>
             <div class="product-card no-hover">
-                <img src="product17.webp" alt="product17" class="product-image" loading="lazy">
+                <img src="images/products/product17-1800w.webp" 
+                srcset="images/products/product17-600w.webp 600w, images/products/product17-1200w.webp 1200w, images/products/product17-1800w.webp 1800w" 
+                sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" 
+                alt="product17" class="product-image" loading="lazy">
             </div>
             <div class="product-card no-hover">
-                <img src="product35.png" alt="product35" class="product-image" loading="lazy">
+                <img src="images/products/product35-1800w.webp" 
+                srcset="images/products/product35-600w.webp 600w, images/products/product35-1200w.webp 1200w, images/products/product35-1800w.webp 1800w" 
+                sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" 
+                alt="product35" class="product-image" loading="lazy">
             </div>
             <div class="product-card">
-                <img src="product3.webp" alt="product3" class="product-image" loading="lazy"> 
-                <img src="product3hover.png" alt="product3hover" class="product-hover-image" loading="lazy">
+                <img src="images/products/product3-1800w.webp" 
+                    srcset="images/products/product3-600w.webp 600w, images/products/product3-1200w.webp 1200w, images/products/product3-1800w.webp 1800w" 
+                    sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" 
+                    alt="product3" class="product-image" loading="lazy">
+                <img src="images/products/product3hover-1800w.webp" 
+                    srcset="images/products/product3hover-600w.webp 600w, images/products/product3hover-1200w.webp 1200w, images/products/product3hover-1800w.webp 1800w" 
+                    sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 33vw" 
+                    alt="product3hover" class="product-hover-image" loading="lazy">
             </div>
+            
         </div>
 
         <section id="about">
             <h2 class="about-me-title">ABOUT ME</h2>
             <div class="about-content">
               <div class="text">
-                <p style="margin-bottom: 20px;">Yo ! My name is tsipnek and I'm a Graphic Designer based in Greece</p>
+                <p style="margin-bottom: 20px;">Yo! My name is tsipnek and I'm a Graphic Designer based in Greece</p>
                 <p style="margin-bottom: 20px;">With a passion for modern design, I specialize in crafting clean, minimal, and unique logos and typographies that make an impact.</p>
                 <p style="margin-bottom: 20px;">I bring a strategic approach to every project, ensuring that each design not only looks great but communicates effectively with its audience.</p>
                 <p style="margin-bottom: 20px;">Whether you're looking for a standout logo or a complete brand identity, I aim to create designs that are both visually striking and functionally meaningful.</p>
                 <p style="margin-bottom: 20px;">Let's collaborate and bring your vision to life with designs that speak for themselves</p>
               </div>
-              <img src="about-image.webp" alt="Profile" class="about-image" width="200" height="200">
+              <img src="images/about-image.webp" alt="Profile" class="about-image" width="200" height="200">
             </div>
         </section>
 
         <div class="carousel-container">
             <div class="carousel">
               <div class="carousel-item">
-                <img src="carousel1.webp" alt="Image 1">
+                <img src="images/carousel1.webp" alt="Image 1" loading="lazy">
               </div>
               <div class="carousel-item">
-                <img src="carousel2.webp" alt="Image 2">
+                <img src="images/carousel2.webp" alt="Image 2" loading="lazy">
               </div>
               <div class="carousel-item">
-                <img src="carousel3.webp" alt="Image 3">
+                <img src="images/carousel3.webp" alt="Image 3" loading="lazy">
               </div>
               <div class="carousel-item">
-                <img src="carousel4.webp" alt="Image 4">
+                <img src="images/carousel4.webp" alt="Image 4" loading="lazy">
               </div>
               <div class="carousel-item">
-                <img src="carousel5.webp" alt="Image 5">
+                <img src="images/carousel5.webp" alt="Image 5" loading="lazy">
               </div>
               <div class="carousel-item">
-                <img src="carousel6.webp" alt="Image 6">
+                <img src="images/carousel6.webp" alt="Image 6" loading="lazy">
               </div>
               <div class="carousel-item">
-                <img src="carousel7.webp" alt="Image 7">
+                <img src="images/carousel7.webp" alt="Image 7" loading="lazy">
               </div>
             </div>
         </div>
@@ -1685,25 +1792,30 @@
           </form>
         </div>
     </section>
+
     <div class="footer">
         <p>Powered by</p>
-        <img src="oxtob.webp" alt="oxto" class="footer-oxto" width="70" height="70">
+        <img src="images/oxtob.webp" alt="oxto" class="footer-oxto" width="70" height="70">
         <p class="copyright">©2025 tsipnek. All rights reserved.</p>
         <a href="https://www.instagram.com/tsipnek.art" target="_blank" rel="noopener noreferrer">
-            <img src="ig.svg" alt="ig" class="find-ig" width="20" height="20">
+            <img src="images/ig.svg" alt="ig" class="find-ig" width="20" height="20">
         </a>
         <a href="https://www.tiktok.com/@tsipnek.art" target="_blank" rel="noopener noreferrer">
-            <img src="tiktok.svg" alt="tiktok" class="find-tiktok" width="20" height="20">
+            <img src="images/tiktok.svg" alt="tiktok" class="find-tiktok" width="20" height="20">
         </a>
-        <a href="https://www.tiktok.com/@tsipnek.art" target="_blank" rel="noopener noreferrer">
-            <img src="whatsapp.svg" alt="whatsapp" class="find-whatsapp" width="20" height="20">
+        <a href="https://api.whatsapp.com/send/?phone=306976617776&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">
+            <img src="images/whatsapp.svg" alt="whatsapp" class="find-whatsapp" width="20" height="20">
         </a>
     </div>
     <div class="footer">
         <p class="disclaimer">All brands depicted in my designs are purely conceptual and serve solely to demonstrate my design skills. I do not claim ownership, affiliation, or financial gain from any of these brands. Though I wish...</p>
     </div>
 
-    <script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js" defer></script>
+
+    <script defer>
         document.addEventListener('DOMContentLoaded', () => {
             // Initialize GSAP animations
             gsap.registerPlugin(ScrollTrigger);
