@@ -234,9 +234,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const heroTL = gsap.timeline({ defaults: { duration: 1, ease: 'power3.out' } });
     heroTL.to('.hero h1', { opacity: 1, y: 0, delay: 0.2 })
             .to('.hero h2', { opacity: 1, y: 0 }, '-=0.7')
-            .to('.hero p', { opacity: 1, y: 0 }, '-=0.7')
-            .to('.hero-buttons', { opacity: 1, y: 0 }, '-=0.7')
-            .to('.infinity-object', { opacity: 1, duration: 1.5 }, '-=0.5');
     
     // Animate sections as they come into view
     gsap.to('.section-header', {
