@@ -44,10 +44,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // Pause/resume on interaction
-        carousel.addEventListener('mouseenter', () => autoScrollTween.pause());
-        carousel.addEventListener('mouseleave', () => autoScrollTween.play());
-        carousel.addEventListener('touchstart', () => autoScrollTween.pause());
-        carousel.addEventListener('touchend', () => autoScrollTween.play());
+        carousel.addEventListener('mouseenter', () => autoScrollTween.pause(), { passive: true });
+        carousel.addEventListener('mouseleave', () => autoScrollTween.play(), { passive: true });
+        carousel.addEventListener('touchstart', () => autoScrollTween.pause(), { passive: true });
+        carousel.addEventListener('touchend', () => autoScrollTween.play(), { passive: true });
     };
 
     // Initialize the carousel
@@ -188,10 +188,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add these new event listeners to handle auto-scroll pause/resume
     let autoScrollTimeout;
     const autoScrollDelay = 3000;
-    carousel.addEventListener('mousedown', () => clearTimeout(autoScrollTimeout));
-    carousel.addEventListener('mouseup', () => autoScrollTimeout = setTimeout(autoScroll, autoScrollDelay));
-    carousel.addEventListener('touchstart', () => clearTimeout(autoScrollTimeout));
-    carousel.addEventListener('touchend', () => autoScrollTimeout = setTimeout(autoScroll, autoScrollDelay));
+    carousel.addEventListener('mousedown', () => clearTimeout(autoScrollTimeout), { passive: true });
+    carousel.addEventListener('mouseup', () => autoScrollTimeout = setTimeout(autoScroll, autoScrollDelay), { passive: true });
+    carousel.addEventListener('touchstart', () => clearTimeout(autoScrollTimeout), { passive: true });
+    carousel.addEventListener('touchend', () => autoScrollTimeout = setTimeout(autoScroll, autoScrollDelay), { passive: true });
 
     // Cleanup on unmount (if using SPA framework)
     window.addEventListener('beforeunload', () => {
