@@ -10,8 +10,9 @@ font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
 @font-face {
 font-family: 'Eurostile';
 src: url('/fonts/EurostileExtendedBlack.ttf') format('truetype');
-font-weight: normal;
+font-weight: bold;
 font-style: normal;
+font-display: swap;
 }
 
 @font-face {
