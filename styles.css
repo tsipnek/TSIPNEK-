@@ -35,10 +35,6 @@ font-display: swap;
 font-family: 'Eurostile Extended'; /* Use only Eurostile font */
 }
 
-.hero-profession {
-font-family: 'Eurostile Extended';
-}
-
 /* Prevent horizontal scrolling on mobile */
 body, html {
 overflow-x: hidden; /* Disable horizontal scrolling */
