@@ -9,7 +9,7 @@ font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
 
 @font-face {
 font-family: 'Eurostile';
-src: url('/fonts/EurostileExtendedBlack.woff2') format('woff2');
+src: url('/fonts/EurostileExtendedBlack.ttf') format('truetype');
 font-weight: normal;
 font-style: normal;
 }
