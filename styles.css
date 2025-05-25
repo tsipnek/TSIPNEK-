@@ -36,9 +36,6 @@ font-family: 'Eurostile Extended'; /* Use only Eurostile font */
 }
 
 /* Prevent horizontal scrolling on mobile */
-body, html {
-overflow-x: hidden; /* Disable horizontal scrolling */
-}
 
 .wrapper {
 overflow-x: hidden;
@@ -47,6 +44,11 @@ overflow-x: hidden;
 html {
 scroll-behavior: auto;
 }
+
+body {
+    overflow-x: hidden;
+}
+
 :root {
 font-family: Inter, sans-serif;
 font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
@@ -172,14 +174,6 @@ opacity: 0;
 transform: translateY(20px);
 }
 
-/*.hero .highlight {
-font-style: italic;
-font-size: inherit;
-display: inline-block;
-padding-right: 0.1em;
-transform: translateZ(0);
-}*/
-
 .btn {
 padding: 12px 28px;
 border-radius: 50px;
@@ -246,6 +240,7 @@ margin: 0 auto;
 display: block;
 margin: 0 auto;
 }
+
 .product-card {
 position: relative;
 aspect-ratio: auto;
@@ -255,6 +250,24 @@ align-items: center;
 overflow: hidden;
 }
 
+.product-card img[src*="product35"] {
+    transform: scale(0.6); /* Scale down to 50% */
+    transform-origin: center; /* Ensure scaling happens from the center */
+}
+
+.product-card img[src*="product8hover"],
+.product-card img[src*="product11hover"],
+.product-card img[src*="product19hover"] {
+    width: auto; /* Maintain aspect ratio */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Ensure it doesn't exceed the container width */
+    max-height: 100%; /* Ensure it doesn't exceed the container height */
+    object-fit: contain; /* Prevent stretching */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center horizontally and vertically */
+}
 
 .product-image {
 height: auto;
