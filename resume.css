@@ -1,0 +1,117 @@
+.inter-semi {
+  font-family: "Inter";
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+body {
+  background: #fff;
+  color: #000;
+  font-family: "Inter";
+  text-align: center;
+  padding: 0 50px; /* Changed from 50px to match container padding */
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  overflow-x: hidden;
+  padding-bottom: 100px;
+}
+
+/* Hero section */
+.hero-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px; /* Adjust space between hero and image */
+  margin-bottom: 40px;
+}
+
+.hero {
+  flex: 1;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  padding: 0 20px;
+  align-items: flex-start;
+}
+
+.hero h1 {
+  font-size: 72px;
+  font-weight: 500;
+  margin-bottom: 0px;
+  line-height: 0.2;
+  overflow: visible;
+}
+
+.hero h2 {
+  font-size: 52px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.about-image-circle {
+  flex-shrink: 0;
+  width: 250px; /* Adjust circle size */
+  height: 250px;
+  border-radius: 50%;
+  background: #e7e7e7; /* Light grey background */
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin: 0 auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  overflow: hidden; /* Ensures nothing spills outside the circle */
+}
+
+.about-image {
+  width: 200px; /* Smaller than the circle */
+  height: 200px;
+  border-radius: 0;
+  object-fit: cover;
+  display: block;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.top-center-logo {
+  display: block;
+  margin: 30px auto 30px auto; /* Added top margin to match nav positioning */
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  filter: brightness(0);
+}
+
+.resume-content {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  padding: 0 20px;
+  align-items: flex-start;
+}
+
+.title {
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+
+.edu {
+  margin-block: 20px;
+}

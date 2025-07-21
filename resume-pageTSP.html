@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>My Resume</title>
+    <link rel="stylesheet" href="resume.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get("code") !== "tspinvite") {
+        window.location.href = "/"; // Block if wrong/no code
+      }
+    </script>
+  </head>
+  <body>
+    <a href="https://tsipnek.com">
+      <img src="images/logo.webp" alt="Logo" class="top-center-logo" />
+    </a>
+    <div rel="preload" class="container">
+      <div class="hero-row">
+        <div class="hero">
+          <h1>I'm tsipnek</h1>
+          <h2>Graphic & Web Designer</h2>
+        </div>
+        <div class="about-image-circle">
+          <img
+            src="images/about-image.png"
+            alt="About Image"
+            class="about-image"
+          />
+        </div>
+      </div>
+      <div class="resume-content">
+        <p>Nektarios Tsipolitis</p>
+        <p>
+          📍 Athens, Greece · 📧 tsipnek@gmail.com · ☎️
+          <a
+            href="https://api.whatsapp.com/send/?phone=306976617776&text&type=phone_number&app_absent=0"
+            target="_blank"
+            rel="noopener noreferrer"
+            >+306976617776</a
+          >
+          · 🌐
+          <a href="https://tsipnek.com" target="_blank" rel="noopener"
+            >tsipnek.com</a
+          >
+          ·
+          <img
+            src="images/Instagram_logo_2016.svg"
+            alt="Instagram"
+            style="
+              width: 18px;
+              height: 18px;
+              vertical-align: middle;
+              margin-right: 4px;
+            "
+          />
+          <a href="https://instagram.com/tsipnek" target="_blank" rel="noopener"
+            >tsipnek</a
+          >
+        </p>
+        <div class="edu">
+          <p class="title">🎓 Education</p>
+          <p>
+            Soon to be Bachelor Student in Digital Design and Development,
+            empasizing in Graphic & Web Design
+          </p>
+          <p>High School Graduate</p>
+        </div>
+        <div class="exp">
+          <p class="title">💼 Experience</p>
+          <p>
+            Actively working as a freelance graphic designer, specializing in
+            clothing designs. Worked with various upcoming clothing brands
+            worldwide, helping them with the branding and creative direction.
+            I’ve handled a wide range of creative work — from logo design,
+            posters, and ad creatives to clothing designs, branding, and social
+            media content. I’ve been the go-to for everything visual, helping
+            brands build their identity across both print and digital. Recently
+            I've been getting into Web & App design and development, which led
+            me to make my portfolio website and also contribute in clients
+            website creative aspect, while constantly enriching my skillset.
+          </p>
+        </div>
+        <div class="skl">
+          <p class="title">🛠️ Skills</p>
+          <p>
+            Graphic Design, Web Design, UI/UX Design, Branding, Illustration,
+            HTML, CSS, Figma, Adobe Creative Suite (Photoshop, Illustrator)
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
